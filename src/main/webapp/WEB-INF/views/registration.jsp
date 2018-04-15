@@ -46,20 +46,22 @@
 
         <div class="row">
             <div class="form-group col-md-12">
-                <label class="col-md-3 control-lable" for="ssoId">SSO ID</label>
+                <label class="col-md-3 control-lable" for="email">Email</label>
                 <div class="col-md-7">
                     <c:choose>
                         <c:when test="${edit}">
-                            <form:input type="text" path="ssoId" id="ssoId" class="form-control input-sm"
+                            <form:input type="text" path="email" id="email" class="form-control input-sm"
                                         disabled="true"/>
                         </c:when>
                         <c:otherwise>
-                            <form:input type="text" path="ssoId" id="ssoId" class="form-control input-sm"/>
+                            <form:input type="text" path="email" id="email" class="form-control input-sm"/>
                             <div class="has-error">
-                                <form:errors path="ssoId" class="help-inline"/>
+                                <form:errors path="email" class="help-inline"/>
                             </div>
                         </c:otherwise>
                     </c:choose>
+
+
                 </div>
             </div>
         </div>
@@ -71,18 +73,6 @@
                     <form:input type="password" path="password" id="password" class="form-control input-sm"/>
                     <div class="has-error">
                         <form:errors path="password" class="help-inline"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label class="col-md-3 control-lable" for="email">Email</label>
-                <div class="col-md-7">
-                    <form:input type="text" path="email" id="email" class="form-control input-sm"/>
-                    <div class="has-error">
-                        <form:errors path="email" class="help-inline"/>
                     </div>
                 </div>
             </div>

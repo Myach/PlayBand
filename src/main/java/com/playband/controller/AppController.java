@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.security.Principal;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Locale;
@@ -44,11 +45,16 @@ public class AppController {
     @Autowired
     AuthenticationTrustResolver authenticationTrustResolver;
 
+    @RequestMapping(value = {"/"}, method = RequestMethod.GET)
+    public String home(Principal principal) {
+
+        return "home";
+    }
 
     /**
      * This method will list all existing users.
      */
-    @RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/list"}, method = RequestMethod.GET)
     public String listUsers(ModelMap model) {
 
         List<User> users = userService.findAllUsers();

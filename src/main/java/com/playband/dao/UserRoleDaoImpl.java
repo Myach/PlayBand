@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 
-@Repository("userProfileDao")
+@Repository("userRoleDao")
 public class UserRoleDaoImpl extends AbstractDao<Integer, Role> implements UserRoleDao {
 
     public Role findById(int id) {
